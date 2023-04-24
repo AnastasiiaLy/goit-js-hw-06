@@ -1,13 +1,14 @@
-const ulElements = document.querySelectorAll("#categories li.item");
-console.log("Number of categories:", ulElements.length);
+const categoriesItem = document.querySelectorAll("#categories li.item");
 
-ulElements.forEach(function (el) {
-  const elements = el.querySelectorAll("li");
-  const category = el.querySelector("li>h2");
+console.log(`В списку ${categoriesItem.length} категорії.`);
 
-  const obj = {
-    Categoty: category.textContent,
-    Elements: elements.length,
-  };
-  console.log(obj);
+categoriesItem.forEach((item) => {
+  const categoryTitle = item.firstElementChild.textContent;
+
+  const categoryItems = item.lastElementChild;
+  const categoryItemsCount = categoryItems.children.length;
+
+  console.log(
+    `- Категорія: ${categoryTitle} (кількість елементів: ${categoryItemsCount})`
+  );
 });
