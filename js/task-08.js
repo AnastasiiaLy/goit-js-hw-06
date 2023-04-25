@@ -1,13 +1,13 @@
 const form = document.querySelector(".js-register-form");
 
-const formInputs = event.currentTarget.querySelectorAll("input");
-
 let hasEmptyFields = false;
 
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
+
+  const formInputs = event.currentTarget.querySelectorAll("input");
 
   formInputs.forEach((input) => {
     if (!input.value) {
